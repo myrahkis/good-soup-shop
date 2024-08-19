@@ -26,7 +26,7 @@ body {
   min-height: 100vh;
   background-color: var(--background-color);
   color: var(--dark-text-color);
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 button {

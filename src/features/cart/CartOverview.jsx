@@ -1,7 +1,13 @@
+import { Link } from "react-router-dom";
+
 function CartOverview() {
     return (
       <div>
-        <h1>CART OVERVIEW</h1>
+        <p>
+          <span>N soups</span>
+          <span>$N.N</span>
+        </p>
+        <Link to='/cart'>Open cart &rarr;</Link>
       </div>
     );
   }
