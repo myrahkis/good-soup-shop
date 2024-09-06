@@ -1,4 +1,5 @@
 const API_URL = "https://www.themealdb.com/api/json/v1/1/search.php?s=Soup";
+const API_URL_ORDERS = "https://api.restful-api.dev/objects";
 
 export async function getMenu() {
   const res = await fetch(API_URL);
@@ -11,7 +12,7 @@ export async function getMenu() {
 }
 
 export async function getOrder(id) {
-  const res = await fetch(`${API_URL}/order/${id}`);
+  const res = await fetch(`${API_URL_ORDERS}/${id}`);
 
   if (!res.ok) throw new Error("Не получилось найти заказ");
 
@@ -22,7 +23,7 @@ export async function getOrder(id) {
 
 export async function createOrder(newOrder) {
   try {
-    const res = await fetch(`${API_URL}/order`, {
+    const res = await fetch(`${API_URL_ORDERS}`, {
       method: "POST",
       body: JSON.stringify(newOrder),
       headers: {
@@ -42,7 +43,7 @@ export async function createOrder(newOrder) {
 
 export async function updateOrder(id, updateObj) {
   try {
-    const res = await fetch(`${API_URL}/order/${id}`, {
+    const res = await fetch(`${API_URL_ORDERS}/${id}`, {
       method: "PATCH",
       body: JSON.stringify(updateObj),
       headers: {
