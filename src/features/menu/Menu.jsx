@@ -8,7 +8,7 @@ function Menu() {
   // console.log(menu);
 
   return (
-    <ul>
+    <ul className="flex justify-evenly gap-9 py-12 px-5 flex-wrap">
       {menu.map((soup) => (
         <MenuItem key={soup.idMeal} soup={soup} />
       ))}

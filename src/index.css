@@ -26,14 +26,7 @@ html {
   font-style: normal;
 }
 
-/* body {
-  display: flex;
-  background-color: var(--background-color);
-  color: var(--dark-text-color);
-  font-size: 2rem;
-  padding: 3rem;
-}
-
+/*
 img {
   width: 10rem;
   height: 10rem;

@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -6,7 +7,7 @@ module.exports = {
       transparent: "transparent",
       current: "currentColor",
       "background-color": "#fff4f4",
-      "light-bg-color": '#FFFCFC',
+      "light-bg-color": "#FFFCFC",
       "secondary-color": "#e58b8e",
       "main-color": "#c25e67",
       "emphasis-color": "#007678",
@@ -18,6 +19,12 @@ module.exports = {
       medium: "768px",
       small: "576px",
       "extra-small": "320px",
+    },
+    extend: {
+      cursor: {
+        default: "url(/spoon.svg), default",
+        text: "url(/fork.svg), text",
+      },
     },
   },
   plugins: [],
