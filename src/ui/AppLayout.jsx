@@ -10,10 +10,10 @@ function AppLayout() {
   // console.log(nav);
 
   return (
-    <div>
+    <div className="grid h-screen grid-rows-[auto_1fr_auto]">
       {isLoading && <Loader />}
       <Header />
-      <main>
+      <main className="overflow-y-auto">
         <Outlet />
       </main>
       <CartOverview />

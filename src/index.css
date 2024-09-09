@@ -1,15 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
 
-:root {
+/* :root {
   --background-color: #fff4f4;
   --secondary-color: #e58b8e;
   --main-color: #c25e67;
   --emphasis-color: #f7f5dd;
   --dark-text-color: #252525;
-}
+} */
 
 * {
   box-sizing: border-box;
@@ -18,7 +18,7 @@
 }
 
 html {
-  font-size: 65%;
+  /* font-size: 65%; */
   min-height: 100vh;
   width: 100%;
   font-family: "Rubik", sans-serif;
@@ -26,7 +26,7 @@ html {
   font-style: normal;
 }
 
-body {
+/* body {
   display: flex;
   background-color: var(--background-color);
   color: var(--dark-text-color);
@@ -52,4 +52,4 @@ button {
 }
 button:hover {
   border-color: #646cff;
-}
+} */

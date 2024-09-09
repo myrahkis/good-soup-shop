@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
 import SearchOrder from "../features/order/SearchOrder";
+import UserName from "../features/user/UserName";
 
 function Header() {
-    return(
-        <header>
-            <Link to='/'>GoodSoup</Link>
-            <SearchOrder />
-            <p>|Username|</p>
-        </header>
-    )
+  return (
+    <header className="flex flex-row justify-between bg-main-color px-5 py-3 text-light-text-color">
+      <Link to="/" className="tracking-[0.4rem]">
+        GoodSoup
+      </Link>
+      <SearchOrder />
+      <UserName />
+    </header>
+  );
 }
 
 export default Header;

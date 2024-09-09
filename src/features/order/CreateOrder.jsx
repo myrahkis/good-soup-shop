@@ -3,7 +3,7 @@ import { createOrder } from "../../services/apiRestaurant";
 
 const isValidPhone = (str) =>
   /^\+?\d{1,7}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(
-    str
+    str,
   );
 
 const fakeCart = [
@@ -31,31 +31,56 @@ function CreateOrder() {
   const cart = fakeCart;
 
   return (
-    <div>
-      <h1>Ready to order? Choose!</h1>
-      <Form method="POST">
-        <div>
+    <div className="mt-9 flex flex-col items-center text-dark-text-color">
+      <h1 className="mb-6 text-xl font-semibold text-emphasis-color">
+        Ready to order? Choose!
+      </h1>
+      <Form method="POST" className="flex w-fit flex-col items-start gap-3">
+        <div className="flex gap-2">
           <label>First Name</label>
-          <input type="text" name="customer" required />
+          <input
+            className="bg-light-bg-color rounded-lg border border-main-color"
+            type="text"
+            name="customer"
+            required
+          />
         </div>
-        <div>
+        <div className="flex gap-2">
           <label>Phone number</label>
-          <input type="tel" name="phone" required />
+          <input
+            className="bg-light-bg-color rounded-lg border border-main-color"
+            type="tel"
+            name="phone"
+            required
+          />
           {formErrors?.phone && <p>{formErrors.phone}</p>}
         </div>
-        <div>
+        <div className="flex gap-2">
           <label>Address</label>
           <div>
-            <input type="text" name="address" required />
+            <input
+              className="bg-light-bg-color rounded-lg border border-main-color"
+              type="text"
+              name="address"
+              required
+            />
           </div>
         </div>
-        <div>
-          <input type="checkbox" name="priority" id="priority" />
+        <div className="flex gap-2">
+          <input
+            className="bg-light-bg-color h-4 w-4 appearance-none rounded-lg border border-main-color text-emphasis-color checked:bg-main-color"
+            type="checkbox"
+            name="priority"
+            id="priority"
+          />
           <label htmlFor="priority">What to make this order a priority?</label>
         </div>
-        <div>
+        <div className="flex self-center">
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
-          <button disabled={isSubmitting}>
+          <button
+            disabled={isSubmitting}
+            className="rounded-lg border border-main-color bg-main-color px-2 py-1 uppercase text-light-text-color hover:border-emphasis-color hover:bg-emphasis-color"
+          >
             {isSubmitting ? "Placing order..." : "Order now"}
           </button>
         </div>
