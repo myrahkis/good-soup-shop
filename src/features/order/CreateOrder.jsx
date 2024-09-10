@@ -39,7 +39,7 @@ function CreateOrder() {
         <div className="flex gap-2">
           <label>First Name</label>
           <input
-            className="bg-light-bg-color rounded-lg border border-main-color"
+            className="input"
             type="text"
             name="customer"
             required
@@ -48,7 +48,7 @@ function CreateOrder() {
         <div className="flex gap-2">
           <label>Phone number</label>
           <input
-            className="bg-light-bg-color rounded-lg border border-main-color"
+            className="input"
             type="tel"
             name="phone"
             required
@@ -59,7 +59,7 @@ function CreateOrder() {
           <label>Address</label>
           <div>
             <input
-              className="bg-light-bg-color rounded-lg border border-main-color"
+              className="input"
               type="text"
               name="address"
               required
@@ -68,7 +68,7 @@ function CreateOrder() {
         </div>
         <div className="flex gap-2">
           <input
-            className="bg-light-bg-color h-4 w-4 appearance-none rounded-lg border border-main-color text-emphasis-color checked:bg-main-color"
+            className="bg-light-bg-color h-4 w-4 appearance-none rounded-lg border border-main-color checked:bg-main-color"
             type="checkbox"
             name="priority"
             id="priority"

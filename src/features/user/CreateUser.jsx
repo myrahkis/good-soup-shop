@@ -1,17 +1,29 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function CreateUser() {
   const [name, setName] = useState("");
+  const navigate = useNavigate();
   return (
-    <div className="flex justify-center gap-3 text-dark-text-color">
+    <div className="flex flex-col items-center justify-center gap-3 text-dark-text-color">
       <p>Welcome! What is your name?</p>
       <input
         type="text"
         value={name}
-        onChange={(e) => e.target.value}
+        onChange={(e) => setName(e.target.value)}
         placeholder="Jane Doe"
-        className="bg-light-bg-color rounded-lg border border-main-color px-2 cursor-text"
+        className="input text-lg"
       />
+      {name !== "" && (
+        <div>
+          <button
+            onClick={() => navigate("/menu")}
+            className="mt-1 rounded-lg bg-main-color px-4 py-2 text-lg uppercase text-light-text-color hover:bg-emphasis-color"
+          >
+            Start ordering
+          </button>
+        </div>
+      )}
     </div>
   );
 }

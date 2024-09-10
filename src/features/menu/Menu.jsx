@@ -6,9 +6,8 @@ function Menu() {
   const menu = useLoaderData();
 
   // console.log(menu);
-
   return (
-    <ul className="flex justify-evenly gap-9 py-12 px-5 flex-wrap">
+    <ul className="grid grid-cols-4 gap-y-12 gap-x-11 px-20 py-10 mt-[60rem] mb-4">
       {menu.map((soup) => (
         <MenuItem key={soup.idMeal} soup={soup} />
       ))}
