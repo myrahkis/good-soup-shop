@@ -7,7 +7,7 @@ function Menu() {
 
   // console.log(menu);
   return (
-    <ul className="grid grid-cols-4 gap-y-12 gap-x-11 px-20 py-10 mt-[60rem] mb-4">
+    <ul className="grid grid-cols-4 gap-y-12 gap-x-11 px-36 py-12">
       {menu.map((soup) => (
         <MenuItem key={soup.idMeal} soup={soup} />
       ))}

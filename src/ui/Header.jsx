@@ -4,7 +4,7 @@ import UserName from "../features/user/UserName";
 
 function Header() {
   return (
-    <header className="flex flex-row justify-between bg-main-color px-5 py-3 text-light-text-color">
+    <header className="flex flex-row justify-between bg-main-color px-5 py-3 text-light-text-color shadow-lg">
       <Link to="/" className="tracking-[0.4rem]">
         GoodSoup
       </Link>
