@@ -8,6 +8,7 @@ module.exports = {
       current: "currentColor",
       "background-color": "#fff4f4",
       "light-bg-color": "#FFFCFC",
+      "dark-bg-color": '#ffe4e5',
       "secondary-color": "#e58b8e",
       "main-color": "#c25e67",
       "emphasis-color": "#007678",

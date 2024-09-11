@@ -1,9 +1,15 @@
-function OrderItem() {
-    return (
-      <div>
-        <h1>ORDER ITEM</h1>
-      </div>
-    );
-  }
-  
-  export default OrderItem;
+/* eslint-disable react/prop-types */
+function OrderItem({ item }) {
+  const { name, quantity, totalPrice } = item;
+  console.log(item);
+  return (
+    <li className="py-2 text-lg flex items-center justify-between">
+      <p>
+        <span>{quantity}&times;</span> {name}
+      </p>
+      <p>${totalPrice}</p>
+    </li>
+  );
+}
+
+export default OrderItem;

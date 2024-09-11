@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { getOrder } from "../../services/apiRestaurant";
+import OrderItem from "./OrderItem";
 
 function Order() {
   const order = useLoaderData();
@@ -7,18 +8,35 @@ function Order() {
   const totalPrice = cart.reduce((sum, item) => sum + item.totalPrice, 0);
   const PRIORITY_PRICE = 29.99;
   return (
-    <div>
-      <h2>Customer: {customer}</h2>
-      <div>
-        <h2>Status</h2>
-        <div>
-          {priority && <span>Priority</span>}
-          <span>{"status"} order</span>
+    <div className="px-28 py-14 text-dark-text-color">
+      <div className="mb-9 flex justify-between">
+        <h2 className="font-semibold">Order #{order.id} Status</h2>
+        <div className="space-x-5">
+          {priority && (
+            <span className="rounded-lg bg-main-color px-2 py-1 text-light-text-color">
+              Priority
+            </span>
+          )}
+          <span className="rounded-lg bg-emphasis-color px-2 py-1 text-light-text-color">
+            {"status"} order
+          </span>
         </div>
       </div>
-      <p>Price: ${totalPrice}</p>
-      <p>Price for priority: ${PRIORITY_PRICE}</p>
-      <p>To pay on delivery: ${PRIORITY_PRICE + totalPrice}</p>
+      <div className="bg-dark-bg-color mb-9 space-y-2 p-6 text-xl">
+        <p>Estimated delivery time</p>
+      </div>
+      <ul className="mb-9 divide-y divide-dashed divide-emphasis-color border-b border-t border-dashed border-emphasis-color mx-8">
+        {cart.map((item) => (
+          <OrderItem key={item.id} item={item} />
+        ))}
+      </ul>
+      <div className="bg-dark-bg-color space-y-2 p-6 text-xl">
+        <p>Price: ${totalPrice}</p>
+        <p>Price for priority: ${PRIORITY_PRICE}</p>
+        <p className="font-medium">
+          To pay on delivery: ${PRIORITY_PRICE + totalPrice}
+        </p>
+      </div>
     </div>
   );
 }

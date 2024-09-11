@@ -6,7 +6,7 @@ function CartItem({ item }) {
   return (
     <li className="pt-3 text-xl">
       <h4>
-        {quantity}x {name}
+        {quantity}&times; {name}
       </h4>
       <div className="flex justify-between">
         <p>Price: {totalPrice}</p>
