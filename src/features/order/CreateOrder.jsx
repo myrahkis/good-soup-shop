@@ -31,35 +31,32 @@ function CreateOrder() {
   const cart = fakeCart;
 
   return (
-    <div className="mt-9 flex flex-col items-center text-dark-text-color">
-      <h1 className="mb-6 text-xl font-semibold text-emphasis-color">
+    <div className="flex h-full flex-col items-center justify-center text-dark-text-color">
+      <h1 className="mb-6 text-2xl font-semibold text-emphasis-color">
         Ready to order? Choose!
       </h1>
-      <Form method="POST" className="flex w-fit flex-col items-start gap-3">
-        <div className="flex gap-2">
-          <label>First Name</label>
+      <Form method="POST" className="flex w-1/3 flex-col items-start gap-3">
+        <div className="flex w-full flex-col gap-1">
+          <label className="text-xl">First Name</label>
           <input
-            className="input"
+            className="input w-full"
             type="text"
             name="customer"
             required
           />
         </div>
-        <div className="flex gap-2">
-          <label>Phone number</label>
-          <input
-            className="input"
-            type="tel"
-            name="phone"
-            required
-          />
-          {formErrors?.phone && <p>{formErrors.phone}</p>}
+        <div className="flex w-full flex-col gap-1">
+          <label className="text-xl">Phone number</label>
+          <input className="input w-full" type="tel" name="phone" required />
+          {formErrors?.phone && (
+            <p className="text-base text-main-color">{formErrors.phone}</p>
+          )}
         </div>
-        <div className="flex gap-2">
-          <label>Address</label>
+        <div className="flex w-full flex-col gap-1">
+          <label className="text-xl">Address</label>
           <div>
             <input
-              className="input"
+              className="input w-full"
               type="text"
               name="address"
               required
@@ -68,14 +65,16 @@ function CreateOrder() {
         </div>
         <div className="flex gap-2">
           <input
-            className="bg-light-bg-color h-4 w-4 appearance-none rounded-lg border border-main-color checked:bg-main-color"
+            className="mt-1 h-4 w-4 appearance-none rounded-lg border border-main-color bg-light-bg-color checked:bg-main-color"
             type="checkbox"
             name="priority"
             id="priority"
           />
-          <label htmlFor="priority">What to make this order a priority?</label>
+          <label htmlFor="priority" className="text-xl">
+            What to make this order a priority?
+          </label>
         </div>
-        <div className="flex self-center">
+        <div className="flex self-end">
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
           <button
             disabled={isSubmitting}

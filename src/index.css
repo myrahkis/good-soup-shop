@@ -12,10 +12,6 @@
     scrollbar-color: #e58b8e #fff4f4;
     scrollbar-gutter: stable; /*  for Chromium-based browsers, v94+ */
   }
-  .scrollbar::-webkit-scrollbar-thumb {
-    border-radius: 100px;
-  }
-
   /* https://dev.to/afif/i-made-100-more-css-loaders-for-your-next-project-4ioa */
   .loader {
     width: 50px;
