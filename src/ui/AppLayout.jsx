@@ -13,7 +13,7 @@ function AppLayout() {
     <div className="grid h-screen grid-rows-[auto_1fr_auto] text-2xl">
       {isLoading && <Loader />}
       <Header />
-      <main className="overflow-y-auto">
+      <main className="scrollbar overflow-y-auto">
         <Outlet />
       </main>
       <CartOverview />
