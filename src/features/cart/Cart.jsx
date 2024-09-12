@@ -1,42 +1,16 @@
 import { Link, useNavigate } from "react-router-dom";
 import CartItem from "../cart/CartItem";
-import { useSelector } from "react-redux";
-
-// const fakeCart = [
-//   {
-//     id: 6,
-//     name: "Borsch",
-//     quantity: 1,
-//     unitPrice: 12,
-//     totalPrice: 12,
-//   },
-//   {
-//     id: 2,
-//     name: "Tom Yam",
-//     quantity: 2,
-//     unitPrice: 15,
-//     totalPrice: 30,
-//   },
-//   {
-//     id: 6,
-//     name: "Borsch",
-//     quantity: 1,
-//     unitPrice: 12,
-//     totalPrice: 12,
-//   },
-//   {
-//     id: 2,
-//     name: "Tom Yam",
-//     quantity: 2,
-//     unitPrice: 15,
-//     totalPrice: 30,
-//   },
-// ];
+import { useDispatch, useSelector } from "react-redux";
+import { clearCart, getCart } from "./cartSlice";
+import EmptyCart from "./EmptyCart";
 
 function Cart() {
-  const cart = useSelector((state) => state.cart.cart);
+  const cart = useSelector(getCart);
   const name = useSelector((state) => state.user.userName);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  if (cart.length === 0) return <EmptyCart />;
 
   return (
     <div className="flex flex-col px-14 py-6 text-dark-text-color">
@@ -57,7 +31,10 @@ function Cart() {
           >
             Order soups
           </button>
-          <button className="rounded-lg border border-secondary-color px-4 py-2 text-main-color transition-all ease-in-out hover:scale-[0.93] hover:border-emphasis-color hover:bg-emphasis-color hover:text-light-text-color hover:duration-150">
+          <button
+            onClick={() => dispatch(clearCart())}
+            className="rounded-lg border border-secondary-color px-4 py-2 text-main-color transition-all ease-in-out hover:scale-[0.93] hover:border-emphasis-color hover:bg-emphasis-color hover:text-light-text-color hover:duration-150"
+          >
             Clear cart
           </button>
         </div>

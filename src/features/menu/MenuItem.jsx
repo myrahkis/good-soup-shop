@@ -1,16 +1,25 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getRandomInt } from "../../utils/helpers";
-import { addItem } from "../cart/cartSlice";
+import { addItem, getCurrentQuantity } from "../cart/cartSlice";
+import DeleteBtn from "../cart/DeleteBtn";
 
 /* eslint-disable react/prop-types */
 function MenuItem({ soup }) {
-  const { strMeal: soupName, strArea: country, strMealThumb: picture } = soup;
+  const {
+    idMeal: id,
+    strMeal: soupName,
+    strArea: country,
+    strMealThumb: picture,
+  } = soup;
   const unitPrice = getRandomInt(10, 40);
   const dispatch = useDispatch();
 
+  const currentQuantity = useSelector(getCurrentQuantity(id));
+  const isInCart = currentQuantity > 0;
+
   function addToCartHandle() {
     const newItem = {
-      id: soup.idMeal,
+      id,
       name: soupName,
       quantity: 1,
       unitPrice,
@@ -32,12 +41,17 @@ function MenuItem({ soup }) {
       </div>
       <div className="mt-2 flex w-full items-center justify-between">
         <p>${unitPrice}</p>
-        <button
-          onClick={addToCartHandle}
-          className="rounded-lg bg-main-color px-3 py-1 text-light-text-color hover:bg-secondary-color hover:text-dark-text-color"
-        >
-          ADD
-        </button>
+        <div className="space-x-2">
+          {isInCart && <DeleteBtn id={id} />}
+          {!isInCart && (
+            <button
+              onClick={addToCartHandle}
+              className="rounded-lg bg-main-color px-3 py-1 text-light-text-color hover:bg-secondary-color hover:text-dark-text-color"
+            >
+              ADD
+            </button>
+          )}
+        </div>
       </div>
     </li>
   );
