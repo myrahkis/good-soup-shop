@@ -10,7 +10,7 @@ function AppLayout() {
   // console.log(nav);
 
   return (
-    <div className="grid h-screen grid-rows-[auto_1fr_auto] text-2xl">
+    <div className="grid h-screen grid-rows-[auto_1fr_auto] text-2xl selection:bg-secondary-color selection:text-light-bg-color">
       {isLoading && <Loader />}
       <Header />
       <main className="scrollbar overflow-y-auto">
