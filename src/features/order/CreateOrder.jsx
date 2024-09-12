@@ -7,30 +7,30 @@ const isValidPhone = (str) =>
     str,
   );
 
-const fakeCart = [
-  {
-    id: 6,
-    name: "Borsch",
-    quantity: 1,
-    unitPrice: 12,
-    totalPrice: 12,
-  },
-  {
-    id: 2,
-    name: "Tom Yam",
-    quantity: 2,
-    unitPrice: 15,
-    totalPrice: 30,
-  },
-];
+// const fakeCart = [
+//   {
+//     id: 6,
+//     name: "Borsch",
+//     quantity: 1,
+//     unitPrice: 12,
+//     totalPrice: 12,
+//   },
+//   {
+//     id: 2,
+//     name: "Tom Yam",
+//     quantity: 2,
+//     unitPrice: 15,
+//     totalPrice: 30,
+//   },
+// ];
 
 function CreateOrder() {
   const navigation = useNavigate();
   const isSubmitting = navigation.state === "submitting";
   const formErrors = useActionData();
-  const name = useSelector(state => state.user.userName);
+  const name = useSelector((state) => state.user.userName);
 
-  const cart = fakeCart;
+  const cart = useSelector((state) => state.cart.cart);
 
   return (
     <div className="flex h-full flex-col items-center justify-center text-dark-text-color">
