@@ -2,39 +2,39 @@ import { Link, useNavigate } from "react-router-dom";
 import CartItem from "../cart/CartItem";
 import { useSelector } from "react-redux";
 
-const fakeCart = [
-  {
-    id: 6,
-    name: "Borsch",
-    quantity: 1,
-    unitPrice: 12,
-    totalPrice: 12,
-  },
-  {
-    id: 2,
-    name: "Tom Yam",
-    quantity: 2,
-    unitPrice: 15,
-    totalPrice: 30,
-  },
-  {
-    id: 6,
-    name: "Borsch",
-    quantity: 1,
-    unitPrice: 12,
-    totalPrice: 12,
-  },
-  {
-    id: 2,
-    name: "Tom Yam",
-    quantity: 2,
-    unitPrice: 15,
-    totalPrice: 30,
-  },
-];
+// const fakeCart = [
+//   {
+//     id: 6,
+//     name: "Borsch",
+//     quantity: 1,
+//     unitPrice: 12,
+//     totalPrice: 12,
+//   },
+//   {
+//     id: 2,
+//     name: "Tom Yam",
+//     quantity: 2,
+//     unitPrice: 15,
+//     totalPrice: 30,
+//   },
+//   {
+//     id: 6,
+//     name: "Borsch",
+//     quantity: 1,
+//     unitPrice: 12,
+//     totalPrice: 12,
+//   },
+//   {
+//     id: 2,
+//     name: "Tom Yam",
+//     quantity: 2,
+//     unitPrice: 15,
+//     totalPrice: 30,
+//   },
+// ];
 
 function Cart() {
-  const cart = fakeCart;
+  const cart = useSelector((state) => state.cart.cart);
   const name = useSelector((state) => state.user.userName);
   const navigate = useNavigate();
 
