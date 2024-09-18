@@ -6,7 +6,7 @@ function UpdateItem({ id, quantity }) {
   const dispatch = useDispatch();
 
   return (
-    <div className="flex space-x-2 items-center extra-small:text-sm">
+    <div className="flex space-x-2 items-center extra-small:text-sm medium:text-base">
       <button
         onClick={() => dispatch(reduceItemQuantity(id))}
         className="rounded-lg bg-secondary-color px-2 text-light-text-color"

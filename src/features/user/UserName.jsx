@@ -5,7 +5,7 @@ function UserName() {
   const name = useSelector(state => state.user.userName);
 
   return (
-    <div className='text-sm font-semibold extra-small:hidden'>{name}</div>
+    <div className='text-sm font-semibold extra-small:flex'>{name}</div>
   )
 }
 

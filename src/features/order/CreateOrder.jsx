@@ -18,32 +18,46 @@ function CreateOrder() {
 
   return (
     <div className="flex h-full flex-col items-center justify-center text-dark-text-color">
-      <h1 className="mb-6 text-2xl font-semibold text-emphasis-color extra-small:text-lg">
+      <h1 className="mb-6 text-2xl font-semibold text-emphasis-color extra-small:text-lg medium:text-2xl">
         Ready to order? Choose!
       </h1>
-      <Form method="POST" className="flex w-1/3 flex-col items-start gap-3 extra-small:w-3/4">
-        <div className="flex w-full flex-col gap-1 extra-small:flex-row">
-          <label className="text-xl extra-small:text-base">First Name</label>
+      <Form
+        method="POST"
+        className="flex w-1/3 flex-col items-start gap-3 extra-small:w-3/4 medium:w-[37.5%]"
+      >
+        <div className="flex w-full flex-col gap-1 extra-small:flex-row medium:flex-col">
+          <label className="text-xl extra-small:text-base small:w-32  medium:text-xl medium:w-36">
+            First Name
+          </label>
           <input
-            className="input w-full"
+            className="input w-full small:w-72"
             type="text"
             name="customer"
             defaultValue={name}
             required
           />
         </div>
-        <div className="flex w-full flex-col gap-1 extra-small:flex-row">
-          <label className="text-xl extra-small:text-base">Phone number</label>
-          <input className="input w-full" type="tel" name="phone" required />
+        <div className="flex w-full flex-col gap-1 extra-small:flex-row medium:flex-col">
+          <label className="text-xl extra-small:text-base small:w-32 medium:text-xl medium:w-36">
+            Phone number
+          </label>
+          <input
+            className="input w-full small:w-72"
+            type="tel"
+            name="phone"
+            required
+          />
           {formErrors?.phone && (
             <p className="text-base text-main-color">{formErrors.phone}</p>
           )}
         </div>
-        <div className="flex w-full flex-col gap-1 extra-small:flex-row">
-          <label className="text-xl extra-small:text-base">Address</label>
+        <div className="flex w-full flex-col gap-1 extra-small:flex-row medium:flex-col">
+          <label className="text-xl extra-small:text-base small:w-32 medium:text-xl medium:w-36">
+            Address
+          </label>
           <div>
             <input
-              className="input w-full"
+              className="input w-full small:w-72"
               type="text"
               name="address"
               required
@@ -57,7 +71,7 @@ function CreateOrder() {
             name="priority"
             id="priority"
           />
-          <label htmlFor="priority" className="text-xl extra-small:text-base">
+          <label htmlFor="priority" className="text-xl extra-small:text-base medium:text-xl">
             What to make this order a priority?
           </label>
         </div>
@@ -65,7 +79,7 @@ function CreateOrder() {
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
           <button
             disabled={isSubmitting}
-            className="extra-small:text-sm rounded-lg border border-main-color bg-main-color px-3 py-2 uppercase text-light-text-color hover:border-emphasis-color hover:bg-emphasis-color"
+            className="rounded-lg border border-main-color bg-main-color px-3 py-2 uppercase text-light-text-color hover:border-emphasis-color hover:bg-emphasis-color extra-small:text-sm medium-text-base"
           >
             {isSubmitting ? "Placing order..." : "Order now"}
           </button>

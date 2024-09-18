@@ -9,7 +9,7 @@ function CartItem({ item }) {
   const { id, name, quantity, totalPrice } = item;
 
   return (
-    <li className="pt-3 text-xl extra-small:text-base">
+    <li className="pt-3 text-xl extra-small:text-base medium:text-lg">
       <h4>
         {quantity}&times; {name}
       </h4>

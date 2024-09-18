@@ -8,7 +8,7 @@ function DeleteBtn({ id }) {
   return (
     <button
       onClick={() => dispatch(deleteItem(id))}
-      className="rounded-lg bg-emphasis-color px-2 py-1 text-base uppercase text-light-text-color hover:scale-[0.93] hover:duration-150 extra-small:text-xs"
+      className="rounded-lg bg-emphasis-color px-2 py-1 text-base uppercase text-light-text-color hover:scale-[0.93] hover:duration-150 extra-small:text-xs medium:text-base"
     >
       Delete
     </button>

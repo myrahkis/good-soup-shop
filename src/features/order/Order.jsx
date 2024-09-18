@@ -11,8 +11,8 @@ function Order() {
   const PRIORITY_PRICE = 29.99;
 
   return (
-    <div className="px-28 py-14 text-dark-text-color extra-small:px-4 extra-small:text-sm extra-small:py-7">
-      <div className="mb-9 flex justify-between extra-small:flex-col extra-small:gap-1">
+    <div className="px-28 py-14 text-dark-text-color extra-small:px-4 extra-small:text-sm extra-small:py-7 medium:py-10 medium:px-11 medium:text-lg">
+      <div className="mb-9 flex justify-between extra-small:flex-col extra-small:gap-1 medium:flex-row">
         <h2 className="font-semibold">Order #{order.id} Status</h2>
         <div className="space-x-5">
           {priority && (
@@ -25,7 +25,7 @@ function Order() {
           </span>
         </div>
       </div>
-      <div className="mb-9 space-y-2 bg-dark-bg-color p-6 text-xl extra-small:text-lg">
+      <div className="mb-9 space-y-2 bg-dark-bg-color p-6 text-xl extra-small:text-lg medium:text-xl">
         <p>Estimated delivery time</p>
       </div>
       <ul className="mx-8 mb-9 divide-y divide-dashed divide-emphasis-color border-b border-t border-dashed border-emphasis-color">
@@ -33,7 +33,7 @@ function Order() {
           <OrderItem key={item.id} item={item} />
         ))}
       </ul>
-      <div className="space-y-2 bg-dark-bg-color p-6 text-xl extra-small:text-lg">
+      <div className="space-y-2 bg-dark-bg-color p-6 text-xl extra-small:text-lg medium:text-xl">
         <p>Price: ${totalPrice}</p>
         {priority && <p>Price for priority: ${PRIORITY_PRICE}</p>}
         <p className="font-medium">

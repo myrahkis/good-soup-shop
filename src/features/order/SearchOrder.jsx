@@ -20,7 +20,7 @@ function SearchOrder() {
         placeholder="Search order ID"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="input text-dark-text-color extra-small:w-40 extra-small:text-sm"
+        className="input text-dark-text-color extra-small:w-40 extra-small:text-sm small:w-56"
       />
     </form>
   );
