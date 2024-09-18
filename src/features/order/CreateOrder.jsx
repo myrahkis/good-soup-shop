@@ -30,7 +30,7 @@ function CreateOrder() {
             First Name
           </label>
           <input
-            className="input w-full small:w-72 extra-small:w-[17.3rem]"
+            className="input w-full small:w-72 extra-small:w-я"
             type="text"
             name="customer"
             defaultValue={name}
@@ -42,7 +42,7 @@ function CreateOrder() {
             Phone number
           </label>
           <input
-            className="input w-full small:w-72 extra-small:w-[17.3rem]"
+            className="input w-full small:w-72 extra-small:w-я"
             type="tel"
             name="phone"
             required
@@ -57,7 +57,7 @@ function CreateOrder() {
           </label>
           <div>
             <input
-              className="input w-full small:w-72 extra-small:w-[17.3rem]"
+              className="input w-full small:w-72 extra-small:w-я"
               type="text"
               name="address"
               required
