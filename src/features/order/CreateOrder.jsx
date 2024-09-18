@@ -26,7 +26,7 @@ function CreateOrder() {
         className="flex w-1/3 flex-col items-start gap-3 extra-small:w-3/4 medium:w-[37.5%]"
       >
         <div className="flex w-full flex-col gap-1 extra-small:flex-row medium:flex-col">
-          <label className="text-xl extra-small:text-base small:w-32  medium:text-xl medium:w-36">
+          <label className="text-xl extra-small:text-base small:w-32 medium:w-36 medium:text-xl">
             First Name
           </label>
           <input
@@ -38,7 +38,7 @@ function CreateOrder() {
           />
         </div>
         <div className="flex w-full flex-col gap-1 extra-small:flex-row medium:flex-col">
-          <label className="text-xl extra-small:text-base small:w-32 medium:text-xl medium:w-36">
+          <label className="text-xl extra-small:text-base small:w-32 medium:w-36 medium:text-xl">
             Phone number
           </label>
           <input
@@ -52,7 +52,7 @@ function CreateOrder() {
           )}
         </div>
         <div className="flex w-full flex-col gap-1 extra-small:flex-row medium:flex-col">
-          <label className="text-xl extra-small:text-base small:w-32 medium:text-xl medium:w-36">
+          <label className="text-xl extra-small:text-base small:w-32 medium:w-36 medium:text-xl">
             Address
           </label>
           <div>
@@ -71,7 +71,10 @@ function CreateOrder() {
             name="priority"
             id="priority"
           />
-          <label htmlFor="priority" className="text-xl extra-small:text-base medium:text-xl">
+          <label
+            htmlFor="priority"
+            className="text-xl extra-small:text-base medium:text-xl"
+          >
             What to make this order a priority?
           </label>
         </div>
@@ -79,7 +82,7 @@ function CreateOrder() {
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
           <button
             disabled={isSubmitting}
-            className="rounded-lg border border-main-color bg-main-color px-3 py-2 uppercase text-light-text-color hover:border-emphasis-color hover:bg-emphasis-color extra-small:text-sm medium-text-base"
+            className="medium-text-base rounded-lg border border-main-color bg-main-color px-3 py-2 uppercase text-light-text-color hover:border-emphasis-color hover:bg-emphasis-color extra-small:text-sm"
           >
             {isSubmitting ? "Placing order..." : "Order now"}
           </button>
