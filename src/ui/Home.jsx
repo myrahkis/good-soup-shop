@@ -7,8 +7,8 @@ function Home() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex h-full flex-col justify-center">
-      <h1 className="mb-4 text-center text-4xl font-semibold uppercase text-emphasis-color">
+    <div className="flex h-full flex-col justify-center extra-small:text-base">
+      <h1 className="mb-4 text-center text-4xl font-semibold uppercase text-emphasis-color extra-small:text-xl">
         The best soups.
         <br />
         <span className="text-main-color">Good soup, good for you.</span>

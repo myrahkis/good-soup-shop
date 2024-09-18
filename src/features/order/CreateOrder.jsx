@@ -18,12 +18,12 @@ function CreateOrder() {
 
   return (
     <div className="flex h-full flex-col items-center justify-center text-dark-text-color">
-      <h1 className="mb-6 text-2xl font-semibold text-emphasis-color">
+      <h1 className="mb-6 text-2xl font-semibold text-emphasis-color extra-small:text-lg">
         Ready to order? Choose!
       </h1>
-      <Form method="POST" className="flex w-1/3 flex-col items-start gap-3">
-        <div className="flex w-full flex-col gap-1">
-          <label className="text-xl">First Name</label>
+      <Form method="POST" className="flex w-1/3 flex-col items-start gap-3 extra-small:w-3/4">
+        <div className="flex w-full flex-col gap-1 extra-small:flex-row">
+          <label className="text-xl extra-small:text-base">First Name</label>
           <input
             className="input w-full"
             type="text"
@@ -32,15 +32,15 @@ function CreateOrder() {
             required
           />
         </div>
-        <div className="flex w-full flex-col gap-1">
-          <label className="text-xl">Phone number</label>
+        <div className="flex w-full flex-col gap-1 extra-small:flex-row">
+          <label className="text-xl extra-small:text-base">Phone number</label>
           <input className="input w-full" type="tel" name="phone" required />
           {formErrors?.phone && (
             <p className="text-base text-main-color">{formErrors.phone}</p>
           )}
         </div>
-        <div className="flex w-full flex-col gap-1">
-          <label className="text-xl">Address</label>
+        <div className="flex w-full flex-col gap-1 extra-small:flex-row">
+          <label className="text-xl extra-small:text-base">Address</label>
           <div>
             <input
               className="input w-full"
@@ -57,7 +57,7 @@ function CreateOrder() {
             name="priority"
             id="priority"
           />
-          <label htmlFor="priority" className="text-xl">
+          <label htmlFor="priority" className="text-xl extra-small:text-base">
             What to make this order a priority?
           </label>
         </div>
@@ -65,7 +65,7 @@ function CreateOrder() {
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
           <button
             disabled={isSubmitting}
-            className="rounded-lg border border-main-color bg-main-color px-2 py-1 uppercase text-light-text-color hover:border-emphasis-color hover:bg-emphasis-color"
+            className="extra-small:text-sm rounded-lg border border-main-color bg-main-color px-3 py-2 uppercase text-light-text-color hover:border-emphasis-color hover:bg-emphasis-color"
           >
             {isSubmitting ? "Placing order..." : "Order now"}
           </button>

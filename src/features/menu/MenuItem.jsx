@@ -29,11 +29,11 @@ function MenuItem({ soup }) {
   }
 
   return (
-    <li className="flex min-w-60 max-w-60 flex-col text-base text-dark-text-color">
+    <li className="flex min-w-60 max-w-60 flex-col text-base text-dark-text-color extra-small:text-sm extra-small:min-w-32 extra-small:max-w-60">
       <img
         src={picture}
         alt={`${soup.strMeal} pic`}
-        className="mb-3 h-[14rem] w-[14rem] self-center rounded-2xl shadow-xl duration-100 hover:translate-y-0.5"
+        className="mb-3 h-[14rem] w-[14rem] self-center rounded-2xl shadow-xl duration-100 hover:translate-y-0.5 extra-small:h-[7rem] extra-small:w-[7rem]"
       />
       <div>
         <h4 className="font-semibold uppercase">{soupName}</h4>
@@ -46,7 +46,7 @@ function MenuItem({ soup }) {
           {!isInCart && (
             <button
               onClick={addToCartHandle}
-              className="rounded-lg bg-main-color px-3 py-1 text-light-text-color hover:bg-secondary-color hover:text-dark-text-color"
+              className="rounded-lg bg-main-color px-3 py-1 text-light-text-color hover:bg-secondary-color hover:text-dark-text-color extra-small:text-xs"
             >
               ADD
             </button>

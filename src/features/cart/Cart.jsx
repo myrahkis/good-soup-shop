@@ -13,27 +13,27 @@ function Cart() {
   if (cart.length === 0) return <EmptyCart />;
 
   return (
-    <div className="flex flex-col px-14 py-6 text-dark-text-color">
+    <div className="flex flex-col px-14 py-6 text-dark-text-color extra-small:px-6 extra-small:text-base">
       <Link to="/menu" className="text-base text-emphasis-color">
         &larr; Back to manu
       </Link>
-      <div className="px-24">
+      <div className="px-24 extra-small:px-0">
         <h1 className="mt-7">Your cart, {name}</h1>
         <ul className="scrollbar mt-5 flex max-h-96 flex-col gap-3 divide-y divide-dashed divide-emphasis-color overflow-y-auto border-b border-t border-emphasis-color px-5 py-3">
           {cart.map((item) => (
             <CartItem key={item.id} item={item} />
           ))}
         </ul>
-        <div className="mt-5 flex justify-end space-x-4 text-xl">
+        <div className="mt-5 flex justify-end space-x-4 text-xl extra-small:justify-between">
           <button
             onClick={() => navigate("/order/new")}
-            className="rounded-lg bg-main-color px-4 py-2 text-light-text-color hover:scale-[0.93] hover:bg-secondary-color hover:text-dark-text-color hover:duration-150"
+            className="rounded-lg bg-main-color px-4 py-2 text-light-text-color hover:scale-[0.93] hover:bg-secondary-color hover:text-dark-text-color hover:duration-150 extra-small:text-sm"
           >
             Order soups
           </button>
           <button
             onClick={() => dispatch(clearCart())}
-            className="rounded-lg border border-secondary-color px-4 py-2 text-main-color transition-all ease-in-out hover:scale-[0.93] hover:border-emphasis-color hover:bg-emphasis-color hover:text-light-text-color hover:duration-150"
+            className="rounded-lg border border-secondary-color px-4 py-2 text-main-color transition-all ease-in-out hover:scale-[0.93] hover:border-emphasis-color hover:bg-emphasis-color hover:text-light-text-color hover:duration-150 extra-small:text-sm"
           >
             Clear cart
           </button>
