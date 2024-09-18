@@ -23,26 +23,26 @@ function CreateOrder() {
       </h1>
       <Form
         method="POST"
-        className="flex w-1/3 flex-col items-start gap-3 extra-small:w-3/4 medium:w-[37.5%]"
+        className="flex w-1/3 flex-col items-start gap-3 extra-small:w-2/3 medium:w-[37.5%]"
       >
-        <div className="flex w-full flex-col gap-1 extra-small:flex-row medium:flex-col">
+        <div className="flex w-full flex-col gap-1 medium:flex-col">
           <label className="text-xl extra-small:text-base small:w-32 medium:w-36 medium:text-xl">
             First Name
           </label>
           <input
-            className="input w-full small:w-72"
+            className="input w-full small:w-72 extra-small:w-[17.3rem]"
             type="text"
             name="customer"
             defaultValue={name}
             required
           />
         </div>
-        <div className="flex w-full flex-col gap-1 extra-small:flex-row medium:flex-col">
+        <div className="flex w-full flex-col gap-1 medium:flex-col">
           <label className="text-xl extra-small:text-base small:w-32 medium:w-36 medium:text-xl">
             Phone number
           </label>
           <input
-            className="input w-full small:w-72"
+            className="input w-full small:w-72 extra-small:w-[17.3rem]"
             type="tel"
             name="phone"
             required
@@ -51,13 +51,13 @@ function CreateOrder() {
             <p className="text-base text-main-color">{formErrors.phone}</p>
           )}
         </div>
-        <div className="flex w-full flex-col gap-1 extra-small:flex-row medium:flex-col">
+        <div className="flex w-full flex-col gap-1 medium:flex-col">
           <label className="text-xl extra-small:text-base small:w-32 medium:w-36 medium:text-xl">
             Address
           </label>
           <div>
             <input
-              className="input w-full small:w-72"
+              className="input w-full small:w-72 extra-small:w-[17.3rem]"
               type="text"
               name="address"
               required
